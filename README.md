@@ -2,6 +2,8 @@
 
 ### Mais informações leia o "Leia-me.txt"
 
+#### [Baixar binarios ultima Versão](https://github.com/malysonb/ProcessadorHipoteticoNeander-em-C/releases)
+
 Este programa simula o funcionamento de um processador 8 bits
 
 O programa simula um armazenamento de memoria em 8 bits
