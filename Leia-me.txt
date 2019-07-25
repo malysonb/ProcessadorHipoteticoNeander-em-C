@@ -1,0 +1,72 @@
+		Mini-Documentação do Programa:
+		PROCESSADOR HIPOTETICO NEANDER
+
+
+O Programa só irá rodar se houver um arquivo de texto chamado "Processo.txt".
+
+O programa já vem com o Processo.txt de exemplo com 256 linhas
+sendo dividido em duas partes:
+
+	Linha 0 à 127		—Instruções/Programa.
+	Linha 128 à 255		—Dados/Variaveis.
+
+Recomendo usar NOTEPAD++ para editar o Processo.txt, ou qualquer outro que mostre o numero de linhas.
+
+*LEMBRE-SE: A PRIMEIRA LINHA É RECONHECIDA COMO LINHA 0(ZERO)*
+
+*LEMBRE-SE: ESTE PROGRAMA SIMULA O PROCESSADOR NEANDER QUE É UM PROCESSADOR 8BITS*
+________________________________________________________________
+Deve tratar os numeros como:					|
+		|Positivo|Negativo  |		  |		|
+		|0-127	 |128-255   |		  |		|
+Pois é assim que funciona instruções em 8bits:			|
+	EX:	|Binario |Decimal   |Representação|		|
+		|00000001|	   1|		 1|		|
+		|11111110| 	 254|		-1|		|
+Calculo para saber o numero negativo/oposto:			|
+255 - N = Resultado						|
+EX: para saber a representação de 34 negativo em 8-bits/BYTE:	|
+255 - 34 = 221	|Binario |Decimal   |Representação|		|
+		|00100010|	  34|		34|		|
+		|11011101|	 221|	       -34|		|
+________________________________________________________________|
+
+Exemplos de como usar o arquivo Processos:
+
+——Vamos somar dois números e por em outro espaço na memoria:
+
+Legenda:
+NOP	0    //Ignorado pelo programa.
+STA	16   //Armazena o valor contido no ACUMULADOR em um endereço de DADOS.
+LDA	32   //Carrega um valor contido num endereço de DADOS para o ACUMULADOR.
+ADD	48   //Incrementa ao ACUMULADOR um valor contido num endereço de DADOS.
+OR	64   //Usa o calculo OR do acumulador com um valor contido num endereço de DADOS.
+AND	80   //Usa o calculo AND do acumulador com um valor contido num endereço de DADOS.
+NOT	96   //Inverte o ACUMULADOR/Deixa o ACUMULADOR negativo.
+JMP	128  //Pula o PC para um endereço de INSTRUÇÃO/PROGRAMA.
+JN	144  //Pula o PC para um endereço de INSTRUÇÃO/PROGRAMA se o ACUMULADOR for negativo.
+JZ	160  //Pula o PC para um endereço de INSTRUÇÃO/PROGRAMA se o ACUMULADOR for ZERO.
+HLT	240  //Termina o Programa
+
+* = Ignore.
+
+	Linhas|	Codigo	|	|	Linhas|	Codigo	|
+	0	32 (LDA)*	|	0	32 128
+	1	128 		|	1	48 129
+	2	48 (ADD)*	|	2	16 130
+	3	129		|	3	240
+	4	16 (STA)*	|	4	0
+	5	130		|	5	0
+	6	240 (HTL)*	|	6	0
+	...	...		|	...	...
+	128	10		|	128	10
+	129	20		|	129	20
+	130	0(tornará 30)	|	130	0(tornará 30)
+
+
+Caso bug ,problema imprevisto ou qualquer mal funcionamento entre em contato:
+						     contactmalyson@gmail.com
+
+Prazer em poder ajudar.
+
+—Respeitosamente, Malyson Breno..
